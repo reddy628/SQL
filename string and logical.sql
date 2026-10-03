@@ -1,0 +1,46 @@
+CREATE DATABASE STRING;
+USE STRING;
+CREATE TABLE EMPLOYEE (
+    EMPID INT PRIMARY KEY,
+    EMP_NAME VARCHAR(50),
+    CITY VARCHAR(50)
+);
+INSERT INTO EMPLOYEE
+VALUES
+(1, 'Ashok', 'Hyderabad'),
+(2, 'Rahul', 'Bangalore'),
+(3, 'Anil', 'Hyderabad'),
+(4, 'Priya', 'Chennai');
+SELECT * FROM EMPLOYEE;
+
+# LIKE 
+SELECT *
+FROM EMPLOYEE
+WHERE EMP_NAME LIKE 'A%';
+# NOT LIKE
+SELECT * FROM EMPLOYEE
+WHERE EMP_NAME NOT LIKE 'A%'
+# CONCAT
+select CONCAT(EMP_NAME, ' - ', CITY) AS DETAILS
+FROM EMPLOYEE;
+# upper
+SELECT UPPER(EMP_NAME)
+FROM EMPLOYEE;
+# logical operators
+# and operators
+SELECT *
+FROM EMPLOYEE
+WHERE CITY = 'Hyderabad'
+AND SALARY > 50000;
+# or operators
+SELECT *
+FROM EMPLOYEE
+WHERE CITY = 'Hyderabad'
+OR CITY = 'Chennai';
+# not operators
+SELECT *
+FROM EMPLOYEE
+WHERE NOT CITY = 'Hyderabad';
+SELECT *
+FROM EMPLOYEE
+WHERE CITY IN ('Hyderabad', 'Chennai');
